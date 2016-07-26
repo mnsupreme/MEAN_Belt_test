@@ -55,7 +55,7 @@ this.like = function(req,res){
   
   // enter functions here
 }
-module.exports = new PluralNamingConventionCamelCase(); // what does this export?
+module.exports = new AnswersController(); // what does this export?
 
 //populating tables with foreighn keys
 /*app.post('/posts/:id', function (req, res){
