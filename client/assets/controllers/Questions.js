@@ -24,7 +24,7 @@ app.controller('QuestionsController', ["$scope", 'userFactory', '$routeParams', 
 		answer.id = $routeParams
 		answerFactory.create(answer, $routeParams, function(){
 		$location.url('/home')
-	}
+	})
 	}
 
 	$scope.like = answerFactory.like($routeParams)
