@@ -1,7 +1,7 @@
 
 	<h1 class='log_in_header'>Log In</h1>
-	<form class='log_in_boxes'>
-		name:<input type="text" >
+	<form ng-submit='login(name)' class='log_in_boxes'>
+		name:<input type="text" ng-model='name'>
 		<button class='default' type='submit'>Log In</button>
 	</form>
 <style>

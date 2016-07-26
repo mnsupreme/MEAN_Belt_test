@@ -1,4 +1,4 @@
-<h1>Hi !</h1>
+<h1>Hi {{current_user.name}}!</h1>
 <a href='/new/question'>New Question:</a><a href='/' class='right_link'>Log Out</a>
 <form>
 	Search:<input type="text" placeholder="search">
@@ -11,11 +11,11 @@
 		<td>Actions</td>
 	</thead>
 	<tbody>
-		<tr>
-			<td></td>
-			<td></td>
-			<td><a href='/show/{{question.id}}'>show</a></td>
-			<td><a href='/new/answer'>answer</a></td>
+		<tr ng-repeat='for question in list'>
+			<td ng-bind='question.text'></td>
+			<td ng-bind='question._answers.length'></td>
+			<td><a href='/show/{{question._id}}'>show</a></td>
+			<td><a href='/new/answer/{{question._id}}'>answer</a></td>
 		</tr>
 	</tbody>
 </table>

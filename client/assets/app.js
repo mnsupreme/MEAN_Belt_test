@@ -3,23 +3,23 @@ app.config(function ($routeProvider) {
     $routeProvider
 	.when('/',{
             templateUrl: 'partials/login.html',
-            controller: ''
+            controller: 'UsersController'
         })
         .when('/show/:id',{
             templateUrl: 'partials/question.html',
-            controller: ''
+            controller: 'QuestionsController'
         })
         .when('/new/question', {
         	templateUrl: 'partials/new_question.html',
-        	controller: ''
+        	controller: 'QuestionsController'
         })
-        .when('/new/answer',{
+        .when('/new/answer/:id',{
         	templateUrl: 'partials/new_answer.html',
-        	controller: ''
+        	controller: 'QuestionsController'
         })
         .when('/home',{
             templateUrl: 'partials/question_list.html',
-            controller: ''
+            controller: 'QuestionsController'
         })
         .otherwise({
           redirectTo: '/'

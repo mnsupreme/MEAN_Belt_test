@@ -1,9 +1,9 @@
 <a href='/home'>Home</a><a href='/' class='right_link'>Log Out</a>
 <h1>New Question:</h1>
-	<form>
-		Question:<textarea rows='10' class='row text' ></textarea>
+	<form ng-submit='create(question)'>
+		Question:<textarea rows='10' class='row text' ng-model='question.text'></textarea>
 		<div class='bottom row'>
-		Description (optional):<textarea rows='10' class='row text' ></textarea>
+		Description (optional):<textarea rows='10' class='row text' ng-model='question.description'></textarea>
 		<button type='submit'>submit</button>
 		</div>
 	</form>

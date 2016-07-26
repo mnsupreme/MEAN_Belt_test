@@ -6,6 +6,16 @@ var Question = mongoose.model('Question');
 // Build out the methods in the friendsControllers below
 function QuestionsController(){
 
+  this.get = function(req, res){
+    Question.find({},function(err,result){
+      if(err){
+        console.log('trouble getting questions')
+        return
+      }
+      res.json(result)
+    })
+  }
+
   this.create = function(req,res){
     Question.create({text:req.body.text, description:req.body.description, name:req.body.name}, function(err,result){
       if(err){

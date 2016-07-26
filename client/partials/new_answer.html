@@ -1,9 +1,9 @@
-<a href='/home'>Home</a> | <a href='/show/{{question.id}}'>Go Back to Question</a> <a href='/' class='right_link'>Log Out</a>
+<a href='/home'>Home</a> | <a href='/show/{{current_question._id}}'>Go Back to Question</a> <a href='/' class='right_link'>Log Out</a>
 <h1>New Answer:</h1>
-	<form>
-		Question:<textarea rows='10' class='row text' ></textarea>
+	<form ng-submit='create_answer(answer)'>
+		Question:<textarea rows='10' class='row text' ng-bind='answer.text' ></textarea>
 		<div class='bottom row'>
-		Description (optional):<textarea rows='10' class='row text' ></textarea>
+		Description (optional):<textarea rows='10' class='row text' ng-bind='answer.description' ></textarea>
 		<button type='submit'>submit</button>
 		</div>
 	</form>

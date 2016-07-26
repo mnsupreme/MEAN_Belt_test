@@ -8,6 +8,7 @@ module.exports = function(app){
   app.post('/new_question', Question.create );
   app.get('/show/:id', Question.show );
   app.post('/search', Question.search);
+  app.get('/get', Question.get)
   app.post('/new_answer', Answer.create);
-  app.get('/like/:id', Answer.like)
+  app.get('/like/:id', Answer.like);
 }

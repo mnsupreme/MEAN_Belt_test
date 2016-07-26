@@ -31,7 +31,7 @@ this.create = function(req,res){
             console.log('trouble updating question')
             return
           }
-          res.json(question)
+          question.populate('answers').exec(res.json(question))
         })
       })  
     })
