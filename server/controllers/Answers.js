@@ -1,5 +1,6 @@
 console.log('answer server controller');
 var mongoose = require('mongoose');
+var Schema =  mongoose.Schema
 var Answer = mongoose.model('Answer');
 var Question = mongoose.model('Question')
 // WE NEED TO ADD A FEW lines of code here!

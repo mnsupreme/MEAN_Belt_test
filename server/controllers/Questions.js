@@ -1,4 +1,5 @@
 console.log('question server controller');
+var Schema =  mongoose.Schema
 var mongoose = require('mongoose');
 var Question = mongoose.model('Question');
 // WE NEED TO ADD A FEW lines of code here!
