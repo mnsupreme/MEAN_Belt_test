@@ -1,5 +1,6 @@
 console.log('answer model');
 var mongoose = require('mongoose');
+var Schema =  mongoose.Schema;
 // build your friend schema and add it to the mongoose.models
 var AnswerSchema = new mongoose.Schema({
   text:{

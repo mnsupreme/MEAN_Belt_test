@@ -1,5 +1,6 @@
 console.log('user server controller');
 var mongoose = require('mongoose');
+var Schema =  mongoose.Schema;
 var User = mongoose.model('User');
 // WE NEED TO ADD A FEW lines of code here!
 // How does a controller talk to mongoose and get a model?
