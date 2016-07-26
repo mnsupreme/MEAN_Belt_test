@@ -11,26 +11,30 @@ function UsersController(){
   // enter functions here
 
   this.login= function(req,res){
-    User.find({}, function(err, users){
+    console.log("Users.login fired: ", req.body);
+    User.findOneAndUpdate({name: req.body.name}, req.body, {upsert: true, 'new':true}, function(err, user){
+      console.log("User.find callback", err, user);
       if(err){
-        console.log('error in fetching users')
-        return
+        console.log('something went wrong')
+        return res.json(err);
       }
-      for(each in users){
-        if(req.body.name == each.name){
-          res.json(each)
-        }
-        else{
-          User.Create({name:req.body.name}, function(err, new_user){
-            if(err){
-              console.log('error creating user')
-              return
-            }
-            console.log('user created successfully' , new_user)
-            res.json(new_user)
-          })
-        }
-      }
+      res.json(user);
+
+      // for(var index in users){
+      //   if(req.body.name == index.name){
+      //     res.json(index)
+      //   }
+      //   else{
+      //     User.Create({name:req.body.name}, function(err, new_user){
+      //       if(err){
+      //         console.log('error creating user')
+      //         return
+      //       }
+      //       console.log('user created successfully' , new_user)
+      //       res.json(new_user)
+      //     })
+      //   }
+      // }
     })
   }
 }

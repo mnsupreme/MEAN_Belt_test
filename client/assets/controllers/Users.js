@@ -1,10 +1,14 @@
 app.controller('UsersController', ["$scope", 'userFactory', '$routeParams', '$location', function($scope, userFactory, $routeParams, $location){
-	$scope.currentUser = userFactory.current_user
+	console.log("UsersController loaded");
 
-	$scope.login = userFactory.login(name, function(){
-		$scope.currentUser = userFactory.current_user
-		$location.url('/home')
-	})
+	$scope.currentUser = userFactory.current_user;
 
+	$scope.login = function(user){
+		userFactory.login(user, function(){
+			console.log("Callback from userFactory.Login fired");
+			$scope.currentUser = userFactory.current_user
+			$location.url('/home')
+		})
+	}
 
-	}])	
+}])	
