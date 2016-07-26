@@ -1,10 +1,13 @@
 console.log('server routes')
 
-var variable = require('../controllers/(name of controller).js')
+var Question = require('../controllers/Questions.js')
+var Answer = require('../controllers/Answers.js')
+var User = require('../controllers/Users.js')
 module.exports = function(app){
-  app.get('/route', variable.function);
-  app.get('/', );
-  app.post('/', );
-  app.put('/', );
-  app.delete('/', );
+  app.post('/login', User.login);
+  app.post('/new_question', Question.create );
+  app.get('/show/:id', Question.show );
+  app.post('/search', Question.search);
+  app.post('/new_answer', Answer.create);
+  app.get('/like/:id', Answer.like)
 }

@@ -1,0 +1,45 @@
+<h1>Hi !</h1>
+<a href='/new/question'>New Question:</a><a href='/' class='right_link'>Log Out</a>
+<form>
+	Search:<input type="text" placeholder="search">
+	<button type='submit'>Search</button>
+</form>
+<table>
+	<thead>
+		<td>Questions</td>
+		<td>Answers</td>
+		<td>Actions</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td><a href='/show/{{question.id}}'>show</a></td>
+			<td><a href='/new/answer'>answer</a></td>
+		</tr>
+	</tbody>
+</table>
+<style>
+table{
+	margin-left:30%;
+	width:60%;
+}
+ td{
+	padding:2%;
+	margin:2%;
+}
+
+form{
+	margin:3%;
+	margin-left:70%;
+}
+
+form button{
+	margin-left: 5%
+}
+
+.right_link{
+	margin-left:85%;
+}
+
+</style>

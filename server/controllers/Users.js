@@ -1,42 +1,39 @@
-console.log('server controller');
+console.log('user server controller');
 var mongoose = require('mongoose');
-var name_of_model = mongoose.model('name of model');
+var User = mongoose.model('User');
 // WE NEED TO ADD A FEW lines of code here!
 // How does a controller talk to mongoose and get a model?
 // Build out the methods in the friendsControllers below
-function PluralNamingConventionCamelCase(){
+function UsersController(){
 
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-var hour = today.getHours();
-var minutes = today.getMinutes();
-var ampm;
-
-  function getTime(){
-
-  var date;
-
-  if(mm<10) {
-      mm='0'+mm
-  } 
-
-  if(hour>12){
-    hour=hour%2
-    ampm='pm'
-  }
-  else{
-    ampm ='am'
-  }
-
-  date = mm+'/'+dd+'/'+yyyy+' '+hour+' '+minutes+' '+ampm;
-  return date;
-}
   
   // enter functions here
+
+  this.login= function(req,res){
+    User.find({}, function(err, users){
+      if(err){
+        console.log('error in fetching users')
+        return
+      }
+      for(each in users){
+        if(req.body.name == each.name){
+          res.json(each)
+        }
+        else{
+          User.Create({name:req.body.name}, function(err, new_user){
+            if(err){
+              console.log('error creating user')
+              return
+            }
+            console.log('user created successfully' , new_user)
+            res.json(new_user)
+          })
+        }
+      }
+    })
+  }
 }
-module.exports = new PluralNamingConventionCamelCase(); // what does this export?
+module.exports = new UsersController(); // what does this export?
 
 //populating tables with foreighn keys
 /*app.post('/posts/:id', function (req, res){
